@@ -5,6 +5,7 @@ import { BbUIModule } from './modules/bb-ui/bb-ui.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -17,8 +18,9 @@ import { FooterComponent } from './components/footer/footer.component';
 
     LayoutComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent]
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, CardComponent]
 })
 export class SharedModule { }

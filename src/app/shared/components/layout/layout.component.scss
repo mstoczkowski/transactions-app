@@ -6,7 +6,8 @@
   position: relative;
 
   &__header,
-  &__footer {
+  &__footer,
+  &__content {
     position: relative;
     z-index: 1;
   }

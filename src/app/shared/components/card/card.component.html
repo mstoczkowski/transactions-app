@@ -1,0 +1,10 @@
+<div class="card">
+  <h2 class="card__header">
+    <ng-content select="i"></ng-content>
+    {{title}}
+  </h2>
+
+  <div class="card__content" [ngClass]="{ 'card__content--rounded-bottom-border': hasRoundedBottomBorder }">
+    <ng-content></ng-content>
+  </div>
+</div>

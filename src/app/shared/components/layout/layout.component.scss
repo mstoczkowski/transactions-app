@@ -1,0 +1,32 @@
+.layout {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: relative;
+
+  &__header,
+  &__footer {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__content {
+    padding: 60px 0 20px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    filter: blur(4px);
+    background-image: url("../../../../assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

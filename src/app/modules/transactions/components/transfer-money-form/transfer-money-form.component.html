@@ -1,0 +1,31 @@
+<form [formGroup]="moneyTransfer" class="transfer-money-form">
+  <div class="transfer-money-form__field">
+    <app-form-field
+      id="from-account"
+      name="from-account"
+      label="From account"
+      formControlName="fromAccount"
+    ></app-form-field>
+  </div>
+
+  <div class="transfer-money-form__field">
+    <app-form-field
+      id="to-account"
+      name="to-account"
+      label="To account"
+      placeholder="type an account name"
+      formControlName="toAccount"
+    ></app-form-field>
+  </div>
+
+  <div class="transfer-money-form__field">
+    <app-form-field
+      id="amount"
+      name="amount"
+      label="Amount"
+      placeholder="specify the amount"
+      formControlName="amount"
+    ></app-form-field>
+  </div>
+  <app-submit-button (submitForm)="onFormSubmit()"></app-submit-button>
+</form>

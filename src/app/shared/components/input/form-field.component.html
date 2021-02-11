@@ -1,0 +1,12 @@
+<label [for]="id" class="form-field">
+  <div class="form-field__label">{{label}}</div>
+  <input
+    type="text"
+    [id]="id"
+    [name]="name"
+    (change)="onChange($event)"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+    class="form-field__input"
+  >
+</label>

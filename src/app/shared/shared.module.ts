@@ -6,6 +6,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/card/card.component';
+import { FormFieldComponent } from './components/input/form-field.component';
 
 
 @NgModule({
@@ -19,8 +20,9 @@ import { CardComponent } from './components/card/card.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    FormFieldComponent
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, CardComponent]
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, CardComponent, FormFieldComponent]
 })
 export class SharedModule { }

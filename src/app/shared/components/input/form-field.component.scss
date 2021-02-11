@@ -1,0 +1,25 @@
+.form-field {
+
+  &__label {
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  &__input {
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    padding: 11px 12px 9px;
+    width: 100%;
+    color: #6c757d;
+
+    &:disabled {
+      background: #e9ecef;
+      font-weight: bold;
+    }
+
+    &::placeholder {
+      font-style: italic;
+    }
+  }
+}

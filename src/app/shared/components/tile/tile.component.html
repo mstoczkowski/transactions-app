@@ -1,0 +1,10 @@
+<div class="tile">
+  <h2 class="tile__header">
+    <ng-content select="i"></ng-content>
+    {{title}}
+  </h2>
+
+  <div class="tile__content" [ngClass]="{ 'tile__content--rounded-bottom-border': hasRoundedBottomBorder }">
+    <ng-content></ng-content>
+  </div>
+</div>

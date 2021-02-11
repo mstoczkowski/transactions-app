@@ -1,0 +1,19 @@
+<app-modal
+  title="Review Transfer"
+  closeButtonLabel="Close"
+  confirmButtonLabel="Send Transfer"
+  (onClose)="closeModal()"
+  (onConfirm)="sendTransfer()"
+>
+  <div class="transfer-money-confirmation">
+    <p class="transfer-money-confirmation__title">Are you ready to send out this transfer?</p>
+
+    <dl class="transfer-money-confirmation__list">
+      <dt class="transfer-money-confirmation__list-item-label">It will be sent to account:</dt>
+      <dd class="transfer-money-confirmation__list-item-description">{{toAccount}}</dd>
+
+      <dt class="transfer-money-confirmation__list-item-label">With the amount of:</dt>
+      <dd class="transfer-money-confirmation__list-item-description"><span [innerHTML]="currency | trustHtml"></span> {{amount}}</dd>
+    </dl>
+  </div>
+</app-modal>

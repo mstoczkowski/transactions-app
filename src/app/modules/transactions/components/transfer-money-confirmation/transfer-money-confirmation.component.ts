@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap/modal';
+import {TransactionsService} from '../../services/transactions.service';
 
 @Component({
   selector: 'app-transfer-money-confirmation',
@@ -11,8 +12,9 @@ export class TransferMoneyConfirmationComponent implements OnInit {
   amount: string;
   toAccount: string;
   currency: string;
+  accountNumber: string;
 
-  constructor(public bsModalRef: BsModalRef) { }
+  constructor(public bsModalRef: BsModalRef, private transactionService: TransactionsService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +24,13 @@ export class TransferMoneyConfirmationComponent implements OnInit {
   }
 
   sendTransfer(): void {
-    // csda
+    this.transactionService.addTransaction({
+      toAccount: this.toAccount,
+      currency: this.currency,
+      amount: this.amount,
+      accountNumber: this.accountNumber
+    });
+    this.closeModal();
   }
 
 }

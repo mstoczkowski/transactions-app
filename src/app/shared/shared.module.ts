@@ -8,17 +8,12 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TileComponent } from './components/tile/tile.component';
 import { FormFieldComponent } from './components/input/form-field.component';
 import { ModalComponent } from './components/modal/modal.component';
-import { TrustHtmlPipe } from './pipes/trust-html.pipe';
 import { ElementColorDirective } from './directives/element-color.directive';
 import { PriceComponent } from './components/price/price.component';
 import { FilterPipe } from './pipes/filter.pipe';
 
-
 @NgModule({
-  imports: [
-    CommonModule,
-    BbUIModule
-  ],
+  imports: [CommonModule, BbUIModule],
   exports: [
     BbUIModule,
 
@@ -28,11 +23,20 @@ import { FilterPipe } from './pipes/filter.pipe';
     TileComponent,
     FormFieldComponent,
     ModalComponent,
-    TrustHtmlPipe,
     ElementColorDirective,
     PriceComponent,
-    FilterPipe
+    FilterPipe,
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, TileComponent, FormFieldComponent, ModalComponent, TrustHtmlPipe, ElementColorDirective, PriceComponent, FilterPipe]
+  declarations: [
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+    TileComponent,
+    FormFieldComponent,
+    ModalComponent,
+    ElementColorDirective,
+    PriceComponent,
+    FilterPipe,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

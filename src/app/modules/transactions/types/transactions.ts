@@ -33,3 +33,9 @@ export type Transaction = {
   transaction: TransactionDetails;
 };
 
+export type TransactionFormValues = {
+  toAccount: string,
+  amount: string,
+  accountNumber: string,
+  currency: string,
+};

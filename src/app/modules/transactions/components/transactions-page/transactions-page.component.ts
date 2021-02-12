@@ -9,17 +9,18 @@ import {Transaction} from '../../types/transactions';
   styleUrls: ['./transactions-page.component.scss']
 })
 export class TransactionsPageComponent implements OnInit {
-  transactions: Transaction[];
 
   constructor(private transactionsService: TransactionsService) { }
+
+  get transactions(): Transaction[] {
+    return this.transactionsService.transactions;
+  }
 
   ngOnInit(): void {
     this.getTransactions();
   }
 
-  getTransactions(): Subscription {
-    return this.transactionsService
-      .getTransactions()
-      .subscribe(transactions => (this.transactions = transactions));
+  getTransactions(): void {
+    this.transactionsService.getTransactions();
   }
 }

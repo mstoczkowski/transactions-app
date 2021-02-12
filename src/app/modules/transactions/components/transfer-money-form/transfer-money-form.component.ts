@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
 import {TransferMoneyConfirmationComponent} from '../transfer-money-confirmation/transfer-money-confirmation.component';
+import {TransactionFormValues} from '../../types/transactions';
+import {decimalRegex} from './validators';
 
 @Component({
   selector: 'app-transfer-money-form',
@@ -10,10 +12,13 @@ import {TransferMoneyConfirmationComponent} from '../transfer-money-confirmation
 })
 export class TransferMoneyFormComponent implements OnInit {
   bsModalRef: BsModalRef;
-  moneyTransfer = new FormGroup({
+  accountNumber = '334543543543543534';
+  currency = 'EUR';
+
+  moneyTransferForm = new FormGroup({
     fromAccount: new FormControl({ value: 'DDD', disabled: true}),
     toAccount: new FormControl('', [Validators.required]),
-    amount: new FormControl('', [Validators.required])
+    amount: new FormControl('', [Validators.required, Validators.min(1)])
   });
 
   constructor(private modalService: BsModalService) { }
@@ -21,15 +26,22 @@ export class TransferMoneyFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getFormValue(): TransactionFormValues {
+    const {toAccount, amount} = this.moneyTransferForm.getRawValue();
+    return {
+      toAccount: toAccount.target.value,
+      amount: amount.target.value,
+      accountNumber: this.accountNumber,
+      currency: this.currency
+    };
+  }
+
   onFormSubmit(): void {
-    this.bsModalRef = this.modalService.show(TransferMoneyConfirmationComponent, {
-      initialState: {
-        toAccount: 'sdasfdsfs',
-        amount: '231321',
-        currency: '&euro;'
-      }
-    });
-    // console.log('form submit', this.moneyTransfer, event);
+    if (this.moneyTransferForm.valid) {
+      this.bsModalRef = this.modalService.show(TransferMoneyConfirmationComponent, {
+        initialState: this.getFormValue()
+      });
+    }
   }
 
 }

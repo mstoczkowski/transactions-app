@@ -13,7 +13,7 @@
       <dd class="transfer-money-confirmation__list-item-description">{{toAccount}}</dd>
 
       <dt class="transfer-money-confirmation__list-item-label">With the amount of:</dt>
-      <dd class="transfer-money-confirmation__list-item-description"><span [innerHTML]="currency | trustHtml"></span> {{amount}}</dd>
+      <dd class="transfer-money-confirmation__list-item-description">{{amount | currency: currency}}</dd>
     </dl>
   </div>
 </app-modal>

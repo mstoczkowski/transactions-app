@@ -1,0 +1,26 @@
+.transactions-list {
+  height: 400px;
+  overflow-y: scroll;
+
+  &__items {
+
+    &__item {
+      padding: 15px 0;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: #f4f4f4;
+      }
+
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}

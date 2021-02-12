@@ -9,6 +9,9 @@ import { TileComponent } from './components/tile/tile.component';
 import { FormFieldComponent } from './components/input/form-field.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { TrustHtmlPipe } from './pipes/trust-html.pipe';
+import { ElementColorDirective } from './directives/element-color.directive';
+import { PriceComponent } from './components/price/price.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -25,8 +28,11 @@ import { TrustHtmlPipe } from './pipes/trust-html.pipe';
     TileComponent,
     FormFieldComponent,
     ModalComponent,
-    TrustHtmlPipe
+    TrustHtmlPipe,
+    ElementColorDirective,
+    PriceComponent,
+    FilterPipe
   ],
-  declarations: [LayoutComponent, HeaderComponent, FooterComponent, TileComponent, FormFieldComponent, ModalComponent, TrustHtmlPipe]
+  declarations: [LayoutComponent, HeaderComponent, FooterComponent, TileComponent, FormFieldComponent, ModalComponent, TrustHtmlPipe, ElementColorDirective, PriceComponent, FilterPipe]
 })
 export class SharedModule { }

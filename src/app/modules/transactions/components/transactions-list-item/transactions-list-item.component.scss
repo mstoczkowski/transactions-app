@@ -1,0 +1,36 @@
+.transaction-list-item {
+  height: 80px;
+
+  // probably there is a better way to do it
+  > :first-child {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  &__color {
+    width: 6px;
+    height: 100%;
+    margin-right: 10px;
+  }
+
+  &__merchant-name {
+    font-size: 16px;
+    color: #222529;
+    margin-bottom: 6px;
+  }
+
+  &__transaction-type {
+    font-size: 14px;
+    color: #6c757d;
+  }
+
+  &__date {
+    margin-right: 30px;
+  }
+
+  &__amount {
+    margin-left: auto;
+  }
+}

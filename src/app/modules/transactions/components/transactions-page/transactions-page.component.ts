@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Subscription} from 'rxjs';
+import { TransactionsService } from '../../services/transactions.service';
+import {Transaction} from '../../types/transactions';
 
 @Component({
   selector: 'app-transactions-page',
@@ -6,10 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transactions-page.component.scss']
 })
 export class TransactionsPageComponent implements OnInit {
+  transactions: Transaction[];
 
-  constructor() { }
+  constructor(private transactionsService: TransactionsService) { }
 
   ngOnInit(): void {
+    this.getTransactions();
   }
 
+  getTransactions(): Subscription {
+    return this.transactionsService
+      .getTransactions()
+      .subscribe(transactions => (this.transactions = transactions));
+  }
 }

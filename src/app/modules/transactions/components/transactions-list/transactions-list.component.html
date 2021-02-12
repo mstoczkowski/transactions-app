@@ -1,0 +1,12 @@
+<div class="transactions-list">
+  <div class="transactions-list__filter">
+    <app-filter></app-filter>
+  </div>
+  <div class="transactions-list__items">
+    <div *ngFor="let item of transactions" class="transactions-list__items__item">
+      <app-transactions-list-item
+        [item]="item"
+      ></app-transactions-list-item>
+    </div>
+  </div>
+</div>

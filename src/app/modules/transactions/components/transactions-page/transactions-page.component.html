@@ -1,13 +1,19 @@
 <app-layout>
-  <div>
-    <app-tile [title]="'Make Transfer'">
-      <app-transfer-money-form></app-transfer-money-form>
-    </app-tile>
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+        <app-tile [title]="'Make Transfer'">
+          <app-transfer-money-form></app-transfer-money-form>
+        </app-tile>
+      </div>
 
-    <app-tile [title]="'Transactions List'" [hasRoundedBottomBorder]="false">
-      dddd <br>
-      ddd <br>
-      ddd <br>
-    </app-tile>
+      <div class="col-8">
+        <app-tile [title]="'Transactions List'" [hasRoundedBottomBorder]="false">
+          <app-transactions-list
+            [transactions]="transactions"
+          ></app-transactions-list>
+        </app-tile>
+      </div>
+    </div>
   </div>
 </app-layout>
